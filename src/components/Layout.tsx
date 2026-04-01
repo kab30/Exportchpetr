@@ -1,6 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
 import VersionChecker from './VersionChecker';
+import BackupManager from './BackupManager';
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
             <BookOpen className="w-6 h-6" />
             <h1 className="text-xl font-bold">مكتبة الروايات</h1>
           </Link>
+          <BackupManager />
         </div>
       </header>
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">

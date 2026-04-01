@@ -16,15 +16,26 @@ export interface Chapter {
   createdAt: number;
 }
 
+export interface Backup {
+  id?: number;
+  date: string;
+  timestamp: number;
+  data: string;
+}
+
 export class NovelDB extends Dexie {
   novels!: Table<Novel>;
   chapters!: Table<Chapter>;
+  backups!: Table<Backup>;
 
   constructor() {
     super('NovelDB');
     this.version(1).stores({
       novels: '++id, title, createdAt',
       chapters: '++id, novelId, chapterNumber, createdAt, [novelId+chapterNumber]'
+    });
+    this.version(2).stores({
+      backups: '++id, date, timestamp'
     });
   }
 }
