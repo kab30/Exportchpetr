@@ -89,14 +89,20 @@ export default function NovelDetails() {
       <div className="flex flex-col md:flex-row gap-4 md:gap-6">
         {/* Right Column (Cover & Download) - Appears first on mobile */}
         <div className="w-full md:w-1/3 lg:w-1/4 space-y-4 order-1 md:order-2">
-          <div className="aspect-[2/3] rounded-lg overflow-hidden bg-gray-200 shadow-sm">
+          <div className="aspect-[2/3] rounded-lg overflow-hidden bg-gray-200 shadow-md hover:shadow-2xl transition-all duration-500 group relative">
             {novel.coverImage ? (
-              <img src={novel.coverImage} alt={novel.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img 
+                src={novel.coverImage} 
+                alt={novel.title} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                referrerPolicy="no-referrer" 
+              />
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-blue-50 text-blue-300">
+              <div className="w-full h-full flex items-center justify-center bg-blue-50 text-blue-300 transition-transform duration-700 group-hover:scale-105">
                 <Book className="w-12 h-12" />
               </div>
             )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </div>
 
           <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 space-y-3">

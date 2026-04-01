@@ -96,16 +96,16 @@ export default function Home() {
             to={`/novel/${novel.id}`}
             className="group flex flex-col gap-2"
           >
-            <div className="aspect-[2/3] rounded-lg overflow-hidden bg-gray-200 shadow-sm transition-transform group-hover:scale-105 group-hover:shadow-md relative">
+            <div className="aspect-[2/3] rounded-lg overflow-hidden bg-gray-200 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative">
               {novel.coverImage ? (
                 <img
                   src={novel.coverImage}
                   alt={novel.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-blue-50 text-blue-300">
+                <div className="w-full h-full flex items-center justify-center bg-blue-50 text-blue-300 transition-transform duration-500 group-hover:scale-110">
                   <Book className="w-8 h-8 md:w-12 md:h-12" />
                 </div>
               )}

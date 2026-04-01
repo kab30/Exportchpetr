@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 // قم بتغيير هذا الرقم في كل مرة تقوم فيها برفع تحديث جديد للموقع
-const CURRENT_VERSION = '1.0.1';
+const CURRENT_VERSION = '1.0.2';
 
 export default function VersionChecker() {
   const [isUpdating, setIsUpdating] = useState(false);
